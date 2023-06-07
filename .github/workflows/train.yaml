@@ -1,8 +1,6 @@
 name: asl-classification
 on:
   push:
-    branches:
-      - master
 jobs:
   run:
     runs-on: ubuntu-latest
