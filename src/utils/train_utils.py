@@ -51,4 +51,5 @@ def train_model(train_file_path, epochs, batch_size, validation_split, model_pat
         batch_size=batch_size
     )
 
+
     model.save(model_path)
