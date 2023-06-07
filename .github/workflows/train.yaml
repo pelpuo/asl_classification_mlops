@@ -19,11 +19,10 @@ jobs:
           # Pull data & run-cache from S3 and reproduce pipeline
           dvc pull --run-cache
           dvc repro
-          # dvc push
 
           # Report metrics
           echo "## Metrics" >> report.md
           git fetch --prune
-          dvc metrics diff master --show-md >> report.md
+          dvc metrics diff main --show-md >> report.md
 
           cml comment create report.md
