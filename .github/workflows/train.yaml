@@ -12,7 +12,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          # git config --global --add safe.directory /__w/asl_classification_mlops/asl_classification_mlops
+          git config --global --add safe.directory /__w/asl_classification_mlops/asl_classification_mlops
           # Install requirements
           pip install -r requirements.txt
 
