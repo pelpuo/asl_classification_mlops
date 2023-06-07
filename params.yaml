@@ -1,0 +1,18 @@
+base:
+  project: asl_classification
+
+data_load:
+  data_dir: data/sign_mnist_data.csv
+  train_file_path: data/train_data.csv
+  test_file_path: data/test_data.csv
+  split: 0.25
+
+train:
+  epochs: 5
+  batch_size: 128
+  validation_split: 0.2
+  model_path: models/model.h5
+
+evaluate:
+  save_test_preds: true
+  metrics_file: evaluation/metrics.json

@@ -1,0 +1,4 @@
+outs:
+- md5: da9f1473122a3a1c5c026e99d64197b9
+  size: 105051595
+  path: sign_mnist_data.csv

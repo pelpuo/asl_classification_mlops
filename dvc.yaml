@@ -1,0 +1,39 @@
+stages:
+  load_data:
+    cmd: python src/stages/load_data.py --config=params.yaml
+    deps:
+      - src/stages/load_data.py
+      - src/utils/data_utils.py
+    params:
+      - base
+      - data_load
+    outs:
+      - data/train_data.csv
+      - data/test_data.csv
+  train:
+    cmd: python src/stages/train.py --config=params.yaml
+    deps:
+      - data/train_data.csv
+      - src/stages/train.py
+      - src/utils/train_utils.py
+    params:
+      - base
+      - data_load
+      - train
+    outs:
+      - models/model.h5
+  evaluate:
+    cmd: python src/stages/eval.py --config=params.yaml
+    deps:
+      - models/model.h5
+      - src/stages/eval.py
+      - data/test_data.csv
+      - src/utils/eval_utils.py
+    params:
+      - base
+      - data_load
+      - train
+      - evaluate
+    metrics:
+      - evaluation/metrics.json:
+          cache: false
