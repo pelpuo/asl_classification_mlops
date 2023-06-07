@@ -20,7 +20,6 @@ def evaluate(params):
     Path(params.evaluate.metrics_file).parent.mkdir(parents=True, exist_ok=True)
     json.dump(obj=metrics, fp=open(metrics_file, "w"), indent=4)
 
-
 if __name__ == "__main__":
     args_parser = argparse.ArgumentParser()
     args_parser.add_argument("--config", dest="config", required=True)
