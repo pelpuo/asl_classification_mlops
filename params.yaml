@@ -5,10 +5,10 @@ data_load:
   data_dir: data/sign_mnist_data.csv
   train_file_path: data/train_data.csv
   test_file_path: data/test_data.csv
-  split: 0.25
+  split: 0.2
 
 train:
-  epochs: 5
+  epochs: 30
   batch_size: 128
   validation_split: 0.2
   model_path: models/model.h5
